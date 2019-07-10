@@ -1,0 +1,23 @@
+{
+  "name": "ariana-generator",
+  "version": "0.1.0",
+  "description": "\"Use TensorFlow RNN to generate Ariana Grande lyrics\"",
+  "main": "web/index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesbmadden/ariana-generator.git"
+  },
+  "keywords": [
+    "AI"
+  ],
+  "author": "James Madden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesbmadden/ariana-generator/issues"
+  },
+  "homepage": "https://github.com/jamesbmadden/ariana-generator#readme"
+}
