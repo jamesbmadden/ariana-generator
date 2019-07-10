@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jamesbmadden/ariana-generator/issues"
   },
-  "homepage": "https://github.com/jamesbmadden/ariana-generator#readme"
+  "homepage": "https://github.com/jamesbmadden/ariana-generator#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^1.2.2"
+  }
 }
