@@ -1,3 +1,4 @@
 python/checkpoints/*
 .vscode
 .DS_Store
+node_modules
