@@ -22,5 +22,8 @@
   "homepage": "https://github.com/jamesbmadden/ariana-generator#readme",
   "dependencies": {
     "@tensorflow/tfjs": "^1.2.2"
+  },
+  "devDependencies": {
+    "polymer-cli": "^1.9.11"
   }
 }
