@@ -24,6 +24,8 @@
     "@tensorflow/tfjs": "^1.2.2"
   },
   "devDependencies": {
-    "polymer-cli": "^1.9.11"
+    "polymer-cli": "^1.9.11",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
   }
 }

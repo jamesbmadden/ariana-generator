@@ -15,18 +15,28 @@ async function main () {
 
   {
     // variables for generation
-    let numGenerate = 2;
+    let numGenerate = 100;
     let temperature = 1;
-    let textGenerated = 1;
     let startString = '[Chorus';
+    let generatedText = startString;
 
     let inputEval = tf.expandDims(startString.split('').map(char2idx), 0);
 
     model.resetStates();
+
     for (let i = 0; i < numGenerate; i++) {
-      let predictions = tf.squeeze(model.predict(inputEval), 0);
-      let predictedID = tf.multinomial(predictions, 1);
+      let predictions = model.predict(inputEval);
+
+      predictions = tf.squeeze(predictions);
+
+      const predictedId = await tf.multinomial(predictions, 1, null, false).data();
+      console.log(predictedId[0]);;
+
+      generatedText += vocab[predictedId[0]];
+      predictions.dispose();
     }
+    console.log(generatedText);
+    document.body.textContent = generatedText;
   }
 }
 
