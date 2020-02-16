@@ -91,10 +91,12 @@ def generate_text(model, start_string):
   # Higher temperatures results in more surprising text.
   # Experiment to find the best setting.
   temperature = 0.5
+  most_recent = ' '
+  i = 0
 
   # Here batch size == 1
   model.reset_states()
-  for i in range(num_generate):
+  while most_recent != '%' and i < 3000:
       predictions = model(input_eval)
       # remove the batch dimension
       predictions = tf.squeeze(predictions, 0)
@@ -108,7 +110,10 @@ def generate_text(model, start_string):
       input_eval = tf.expand_dims([predicted_id], 0)
 
       text_generated.append(idx2char[predicted_id])
+      most_recent = idx2char[predicted_id]
+      i += 1
 
+  print(i)
   return (start_string + ''.join(text_generated))
 
 print(generate_text(model, start_string=u"[Verse 1"))
