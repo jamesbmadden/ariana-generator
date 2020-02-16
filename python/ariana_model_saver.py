@@ -75,4 +75,6 @@ model.load_weights(tf.train.latest_checkpoint(checkpoint_dir))
 
 model.build(tf.TensorShape([1, None]))
 
+model.save('../model/model.h5')
+
 tfjs.converters.save_keras_model(model, '../model')
