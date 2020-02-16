@@ -78,7 +78,7 @@ def generate_text(model, start_string):
   # Evaluation step (generating text using the learned model)
 
   # Number of characters to generate
-  num_generate = 1000
+  num_generate = 3000
 
   # Converting our start string to numbers (vectorizing)
   input_eval = [char2idx[s] for s in start_string]
@@ -96,7 +96,7 @@ def generate_text(model, start_string):
 
   # Here batch size == 1
   model.reset_states()
-  while most_recent != '%' and i < 3000:
+  while most_recent != '%' and i < num_generate:
       predictions = model(input_eval)
       # remove the batch dimension
       predictions = tf.squeeze(predictions, 0)
